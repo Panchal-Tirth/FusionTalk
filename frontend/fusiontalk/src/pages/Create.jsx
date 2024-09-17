@@ -26,19 +26,35 @@ const Create = () => {
       setError('Please add some text or upload an image to create a post.');
       return;
     }
+<<<<<<< HEAD
 
     const formData = new FormData();
+=======
+    
+    const formData = new FormData();
+
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
     formData.append('text', text);
     if (image) {
       formData.append('image', image);
     }
+<<<<<<< HEAD
 
     try {
       const response = await AxiosInstance.post('/posts/', formData, {
+=======
+    
+    try {
+      const response = await AxiosInstance.post('/tweet/tweets/', formData, {
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
+<<<<<<< HEAD
+=======
+      console.log(response.data)
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
       setSuccessMessage('Post created successfully!');
       setText('');
       setImage(null);

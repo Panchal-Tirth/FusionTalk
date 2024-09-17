@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import AxiosInstance from "./Axios";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
+import { ACCESS_TOKEN, REFRESH_TOKEN ,USER_ID,USER_NAME} from "../constants";
 import '../App.css'; // Assuming the CSS is in this file
 import { useGoogleLogin } from '@react-oauth/google'
 import GoogleButton from 'react-google-button'
@@ -30,11 +30,21 @@ export default function FormRegLog({ route, method }) {
             code: authorizationCode,  // Send the authorization code as a JSON object
           });
       
+<<<<<<< HEAD
           const { access_token, username } = response.data;  // Extract data from response
       
           // Store access token and username in local storage
           localStorage.setItem(ACCESS_TOKEN, access_token);
           localStorage.setItem('username', username);
+=======
+          const { access_token,refresh_token, username ,user_id} = response.data;  // Extract data from response
+        //   console.log(user_id)
+          // Store access token and username in local storage
+          localStorage.setItem(ACCESS_TOKEN, access_token);
+          localStorage.setItem(REFRESH_TOKEN, refresh_token);
+          localStorage.setItem(USER_NAME, username);
+          localStorage.setItem(USER_ID, user_id);
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
       
           // Navigate to the home page after successful login
           navigate('/app');
@@ -68,10 +78,17 @@ export default function FormRegLog({ route, method }) {
                 : { username, password };
 
             const res = await AxiosInstance.post(route, payload);
-
+            console.log(res.data)
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+<<<<<<< HEAD
+=======
+                localStorage.setItem(USER_NAME, res.data.username);
+                localStorage.setItem(USER_ID, res.data.user_id);
+                // console.log('User ID:', res.data.user_id);  // Access the user ID here
+                // console.log('Username:', res.data.username);
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
                 navigate('/app');
             } else {
                 navigate("/login");

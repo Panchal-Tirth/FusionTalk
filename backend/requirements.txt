@@ -9,6 +9,10 @@ httplib2==0.22.0
 oauth2client==4.1.3
 psycopg2-binary==2.9.9
 pyasn1==0.6.1
+<<<<<<< HEAD
+=======
+pillow==10.4.0
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
 pyasn1_modules==0.4.1
 PyJWT==2.9.0
 pyparsing==3.1.4

@@ -8,7 +8,11 @@ function ProtectedRoute({ children }) {
     const [isAuthorized, setIsAuthorized] = useState(null);
 
     useEffect(() => {
+<<<<<<< HEAD
         console.log('Checking authorization...');
+=======
+        // console.log('Checking authorization...');
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
         auth().catch(() => setIsAuthorized(false))
     }, [])
 
@@ -31,9 +35,15 @@ function ProtectedRoute({ children }) {
     };
 
     const auth = async () => {
+<<<<<<< HEAD
         console.log("Hello")
         const token = localStorage.getItem(ACCESS_TOKEN);
         console.log(token)
+=======
+        // console.log("Hello")
+        const token = localStorage.getItem(ACCESS_TOKEN);
+        // console.log(token)
+>>>>>>> 62b22c1e28b439d14ec47f201d422990e9ea80ed
         if (!token) {
             setIsAuthorized(false);
             return;
